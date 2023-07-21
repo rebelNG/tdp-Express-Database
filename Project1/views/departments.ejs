@@ -1,0 +1,11 @@
+<html>
+    <h2> <centre> List of Departments </centre></h2>
+
+    <% 
+        for (let i=0; i<deptName.length; i++){
+    %>
+        <a href="/departmentEmployees/<%= deptName[i].department %>"> <%= deptName[i].department %> </a>
+        <br>
+    
+    <% } %>
+</html>

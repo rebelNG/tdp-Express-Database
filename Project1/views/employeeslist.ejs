@@ -1,0 +1,25 @@
+<html>
+
+<h1> <centre> List of Employees(<%= employees.length %>)</centre> </h1>
+
+<table>
+    <tr>
+        <td> Employee NO</td>
+        <td> Name</td>
+        <td> Department</td>
+    </tr>
+
+    <%
+       for (let i=0; i<employees.length; i++){
+    %>
+    
+    <tr> 
+        <td> <%= employees[i].empno %> </td>
+        <td> <%= employees[i].name %> </td>
+        <td> <%= employees[i].department %> </td>
+        <td> <a href="/deleteEmployee/<%=employees[i].empno %>"> delete </a> </td>             
+     </tr>
+
+     <% } %>
+ </table>
+</html>
