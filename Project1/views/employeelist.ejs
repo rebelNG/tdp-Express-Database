@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><center>List of Employees(<%= employee.length %>)</center></h1><hr>
+    <a href="/">HOME</a><br>
+
+    <table border="1">
+        <tr>
+            <td> Employee ID</td>
+            <td> Name</td>
+            <td> Department</td>
+        </tr>
+
+        <% for (let i = 0; i< employee.length; i++){%> 
+            <tr>
+                <td><%= employee[i].empId %></td>
+                <td><%= employee[i].name %></td>
+                <td><%= employee[i].department %></td>
+                <td><a href="/deleteemployee/<%= employee[i].empId %>">Delete</a></td>
+            </tr>
+        <% } %>
+
+    </table>
+</body>
+</html>
