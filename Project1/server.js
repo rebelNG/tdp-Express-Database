@@ -1,8 +1,10 @@
 let Express = require("express")
 let server = Express()
 let MySql = require("mysql")
+let bodyParser = require('body-parser');
 
 server.set("view engine", "ejs")
+server.use(bodyParser.urlencoded({ extended: false }));
 
 let db = MySql.createConnection({
     host: "localhost",
@@ -44,6 +46,24 @@ server.get("/employeeDepartment/:dept", (req,res)=>{
 server.get("/deleteemployee/:empId", (req, res)=>{
     let deleteSQL = "delete from employee where empId="+req.params.empId
     db.query(deleteSQL, (err, data)=>{
+        db.query("Select * from employee",(err, data)=>{
+            res.render("employeelist.ejs",{employee:data})
+            res.end()
+        })
+    })
+})
+
+server.get("/addemployee",(req,res)=>{
+    res.render("addemployee.ejs")
+    res.end()
+})
+
+server.post("/saveemployee", (req, res)=>{
+    let empId = req.body.empId
+    let name = req.body.name
+    let dept = req.body.department
+    let insertSQL = `insert into employee values(${empId}, '${name}', '${dept}')`
+    db.query(insertSQL, (err,data)=>{
         db.query("Select * from employee",(err, data)=>{
             res.render("employeelist.ejs",{employee:data})
             res.end()
