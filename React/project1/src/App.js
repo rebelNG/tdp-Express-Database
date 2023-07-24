@@ -5,6 +5,7 @@ import Info from './info';
 import Addition from './add';
 import Address from './address';
 import Information from './Information';
+import SalarySlip from './Salary';
 
 
 function App() {
@@ -21,7 +22,10 @@ function App() {
       <Addition/><br/>
       <Address/><br/>
       <Information name="Emmanuel" address="Middlesbrough"/><br/>
-      <Information name="Akonuche" address="Chicago"/>
+      <Information name="Akonuche" address="Chicago"/><br/>
+      <SalarySlip name="Rebel" salary="3000"/><br/>
+      <SalarySlip name="James Bond" salary="100000"/>
+
       
     </>
   );
