@@ -7,6 +7,10 @@ import Address from './address';
 import Information from './Information';
 import SalarySlip from './Salary';
 import Result from './Result';
+import Children from './Children';
+import Records from './records';
+import Events from './Events';
+import Data from './Data';
 
 
 function App() {
@@ -28,6 +32,14 @@ function App() {
       <SalarySlip name="James Bond" salary={100000}/><br/>
       <br/>
       <Result name="Emmanuel" phy={95} chem={60} mat={121}/>
+      <br/>
+      <Children>Hello My Friends</Children>
+      <br/>
+      <Records/><br/>
+      <br/>
+      <Events/><br/>
+      <br/>
+      <Data/>
 
       
     </>
