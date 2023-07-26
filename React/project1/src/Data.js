@@ -14,24 +14,17 @@ function Data(){
     ]
 
     function addEmployee(){
-        records.push({
-            "name":"James",
-            "Dept":"HR",
-            "salary":10000
-        })
-        alert(records.length)
+        setEmployee( (oldRecords)=> {
+            let newRecord=   {"name":"Jason Bourn","dept":"Tred Stone","salary":40000}
+                return [...oldRecords,newRecord]
+            })
     }
 
     let [employees, setEmployee]= useState(records)
 
-    function doAlert(){
-        setEmployee = addEmployee
-        return setEmployee()
-    }
-
     return(
         <>
-            <input type="button" value="New Employee" onClick={doAlert}/>
+            <input type="button" value="New Employee" onClick={addEmployee}/>
             <table>
                 <tr>
                     <td>Name</td>

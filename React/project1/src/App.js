@@ -12,6 +12,10 @@ import Records from './records';
 import Events from './Events';
 import Data from './Data';
 
+import WebData2 from './webData2';
+
+
+
 
 function App() {
   return (
@@ -20,28 +24,9 @@ function App() {
         <center>
           Welcome To ReactJS Training
           <br/>
-          <Info/>
         </center>
+        
       </h1>
-      <Info/><br/>
-      <Addition/><br/>
-      <Address/><br/>
-      <Information name="Emmanuel" address="Middlesbrough"/><br/>
-      <Information name="Akonuche" address="Chicago"/><br/>
-      <SalarySlip name="Rebel" salary={3000}/><br/>
-      <SalarySlip name="James Bond" salary={100000}/><br/>
-      <br/>
-      <Result name="Emmanuel" phy={95} chem={60} mat={121}/>
-      <br/>
-      <Children>Hello My Friends</Children>
-      <br/>
-      <Records/><br/>
-      <br/>
-      <Events/><br/>
-      <br/>
-      <Data/>
-
-      
     </>
   );
 }
